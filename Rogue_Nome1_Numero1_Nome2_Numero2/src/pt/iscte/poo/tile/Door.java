@@ -15,7 +15,7 @@ public class Door extends Tile {
 
     @Override
     public boolean isWalkable() {
-        if (open) {
+        if (!open) {
             Engine.getInstance().changeRoom(leadsToRoom, leadsToPosition);
             for (Tile t : Engine.getInstance().getRoom().getTiles()) {
                 if (t instanceof Door d) {
