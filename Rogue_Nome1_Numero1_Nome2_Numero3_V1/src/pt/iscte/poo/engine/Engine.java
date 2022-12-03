@@ -48,9 +48,6 @@ public class Engine implements Observer {
 
         for (int i = 0; i < 4; i++) {
             rooms.add(new Room(i));
-            for (int j = 0; j < 6; j++) {
-                rooms.get(i).add(new HealthBar(new Point2D(j, GRID_HEIGHT - 1)));
-            }
 
             for (int j = 0; j < 4; j++) {
                 rooms.get(i).add(new InventorySlot(new Point2D(j + 6, GRID_HEIGHT - 1)));
@@ -75,32 +72,10 @@ public class Engine implements Observer {
 
     public void changeRoom(int roomNumber) {
         getRoom().remove(Hero.getInstance());
+        getRoom().get(o -> o instanceof GameElement).forEach(o -> gui.removeImage((GameElement) o));
         currentRoom = roomNumber;
-        gui.clearImages();
         getRoom().add(Hero.getInstance());
         getRoom().renderRoom();
-    }
-
-    private void drawHeroHp() {
-        ArrayList<Object> temp = getRoom().get(o -> o instanceof HealthBar);
-        double bars = Hero.getInstance().getHp() * 6 / (float) Hero.getInstance().getMaxHp();
-
-        double result = Utils.halfRound(bars);
-
-        for (int i = 0; i < temp.size(); i++) {
-            HealthBar currentBar = (HealthBar) temp.get(i);
-            if (i <= result && result > 0) {
-                currentBar.setCurrentMode(0);
-            }
-            else {
-                if (result % 1 == 0.5 && i == (int) result + 1) {
-                    currentBar.setCurrentMode(2);
-                }
-                else {
-                    currentBar.setCurrentMode(1);
-                }
-            }
-        }
     }
 
     private void drawHeroInventory() {
@@ -123,8 +98,8 @@ public class Engine implements Observer {
             ((Entity) o).move();
         }
 
+        Hero.getInstance().drawHp();
         drawHeroInventory();
-        drawHeroHp();
         /* ------ DEBUG ------ //
         for (Object o : getRoom().get(o -> o instanceof Entity)) {
             System.out.println(((Entity) o).getName() + " - HP: " + ((Entity) o).getHp() + " - ATK: " + ((Entity) o).getAtk());

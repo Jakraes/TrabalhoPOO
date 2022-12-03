@@ -30,6 +30,10 @@ public class InventorySlot extends GameElement {
         selected = false;
     }
 
+    public Item getItem() {
+        return item;
+    }
+
     public void addItem(Item i) {
         if (i != null) {
             item = i;

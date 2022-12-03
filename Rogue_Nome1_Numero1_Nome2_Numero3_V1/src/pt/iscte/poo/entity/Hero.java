@@ -2,10 +2,12 @@ package pt.iscte.poo.entity;
 
 import pt.iscte.poo.engine.Engine;
 import pt.iscte.poo.gui.ImageMatrixGUI;
+import pt.iscte.poo.gui.ImageTile;
 import pt.iscte.poo.interfaces.Usable;
 import pt.iscte.poo.item.Item;
 import pt.iscte.poo.ui.HealthBar;
 import pt.iscte.poo.ui.InventorySlot;
+import pt.iscte.poo.util.Utils;
 import pt.iscte.poo.utils.Direction;
 import pt.iscte.poo.utils.Point2D;
 
@@ -23,6 +25,14 @@ public class Hero extends Entity {
         super("Hero", position, 10, 10, 0);
         inventory = new ArrayList<>();
         health = new ArrayList<>();
+
+        for (int i = 0; i < 6; i++) {
+            health.add(new HealthBar(new Point2D(i, Engine.GRID_HEIGHT - 1)));
+            ImageMatrixGUI.getInstance().addImage(health.get(i));
+        }
+        for (int i = 6; i < Engine.GRID_WIDTH; i++) {
+
+        }
     }
 
     public static Hero getInstance() {
@@ -111,6 +121,28 @@ public class Hero extends Entity {
             }
             else {
                 ((InventorySlot) o).unselect();
+            }
+        }
+    }
+
+    public void drawHp() {
+        double bars = getHp() * 6 / (float) getMaxHp();
+
+        double result = Utils.halfRound(bars);
+        System.out.println(result);
+        for (int i = 0; i < health.size(); i++) {
+            System.out.println("i: " + i);
+            HealthBar currentBar = health.get(i);
+            if (i <= result - 1) {
+                currentBar.setCurrentMode(0);
+            }
+            else {
+                if (result % 1 == 0.5 && i == (int) result) {
+                    currentBar.setCurrentMode(2);
+                }
+                else {
+                    currentBar.setCurrentMode(1);
+                }
             }
         }
     }
