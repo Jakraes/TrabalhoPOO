@@ -15,6 +15,7 @@ Bat,4,7
 Bat,4,8
 Armor,8,8
 HealingPotion,8,3
+HealingPotion,7,3
 Door,0,2,1,9,2,1
 Door,0,7,1,9,7
 Key,7,6,1

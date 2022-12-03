@@ -24,7 +24,7 @@ public class Thug extends Entity {
         if (getLastTurn() != Engine.getTurns()) {
             Point2D nextPosition = getPosition().plus(Vector2D.movementVector(getPosition(), Hero.getInstance().getPosition()));
             checkForCollision(nextPosition);
-            updateTurn();
         }
+        updateTurn();
     }
 }

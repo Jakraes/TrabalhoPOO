@@ -1,5 +1,6 @@
 package pt.iscte.poo.entity;
 
+import pt.iscte.poo.effects.PoisonEffect;
 import pt.iscte.poo.engine.Engine;
 import pt.iscte.poo.utils.Point2D;
 import pt.iscte.poo.utils.Vector2D;
@@ -11,7 +12,9 @@ public class Scorpio extends Entity {
 
     @Override
     public void attack(Entity e) {
-
+        if (e instanceof Hero && Math.random() > e.getDef() / 100.0) {
+            e.addEffect(new PoisonEffect());
+        }
     }
 
     @Override

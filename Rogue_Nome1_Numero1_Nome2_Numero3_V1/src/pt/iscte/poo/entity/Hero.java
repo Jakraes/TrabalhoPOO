@@ -55,6 +55,7 @@ public class Hero extends Entity {
 
     @Override
     public void move() {
+        System.out.println(getHp());
         int key = ImageMatrixGUI.getInstance().keyPressed();
 
         Point2D nextPosition = null;
@@ -80,7 +81,12 @@ public class Hero extends Entity {
                 }
             }
 
-            case VK_SPACE -> {if (getItem(selectedSlot) instanceof Usable) ((Usable) getItem(selectedSlot)).use();}
+            case VK_SPACE -> {
+                if (getItem(selectedSlot) instanceof Usable) {
+                    ((Usable) getItem(selectedSlot)).use();
+                    removeItem(getItem(selectedSlot));
+                }
+            }
 
             case VK_1 -> selectSlot(0);
             case VK_2 -> selectSlot(1);
@@ -93,20 +99,20 @@ public class Hero extends Entity {
         updateTurn();
     }
 
-    public Item getItem(int index) {
+    private Item getItem(int index) {
         if (index < inventory.size()) {
             return inventory.get(index);
         }
         return null;
     }
 
-    public void addItem(Item item) {
+    private void addItem(Item item) {
         if (inventory.size() < 4) {
             inventory.add(item);
         }
     }
 
-    public void removeItem(Item item) {
+    private void removeItem(Item item) {
         if (inventory.size() > 0) {
             inventory.remove(item);
         }

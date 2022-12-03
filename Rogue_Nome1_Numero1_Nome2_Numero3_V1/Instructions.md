@@ -11,14 +11,17 @@
 
 ### Criação de mapas:
 >Todos os objetos do mapa são criados apenas com uma posição exceto os definidos a seguir *(excluindo aqueles que o jogador criar)*
+ - **Herói**
+     * É obrigatório meter o Herói no ficheiro **room0.txt**!
+     * >Hero,«posX»,«posY»
  - **Porta**
-	 * **Point2D** `posição no mapa`
-	 * **int** `sala destino`
-	 * **Point2D** `posição destino`
-	 * *Opcional* **int** `número da chave que abre a porta`
-	 * >Door,«posX»,«posY»,«destRoom»,«destPosX»,«destPosY»,«keyNumber»
+     * **Point2D** `posição no mapa`
+     * **int** `sala destino`
+     * **Point2D** `posição destino`
+     * *Opcional* **int** `número da chave que abre a porta`
+     * >Door,«posX»,«posY»,«destRoom»,«destPosX»,«destPosY»,«keyNumber»
 	 
-- **Chave**
-	* **Point2D** `posição no mapa`
-	* **int** `número da chave`
-	* >Key,«posX»,«posY»,«keyNumber»
+ - **Chave**
+     * **Point2D** `posição no mapa`
+     * **int** `número da chave`
+     * >Key,«posX»,«posY»,«keyNumber»

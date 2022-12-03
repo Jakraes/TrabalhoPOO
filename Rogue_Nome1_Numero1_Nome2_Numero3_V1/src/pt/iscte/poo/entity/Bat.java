@@ -32,7 +32,7 @@ public class Bat extends Entity {
                 nextPosition = getPosition().plus(Vector2D.movementVector(getPosition(), Hero.getInstance().getPosition()));
             }
             checkForCollision(nextPosition);
-            updateTurn();
         }
+        updateTurn();
     }
 }

@@ -80,7 +80,10 @@ public abstract class Entity extends GameElement implements Movable, Attackable,
     }
 
     protected void updateTurn() {
-        lastTurn = Engine.getTurns();
+        if (lastTurn != Engine.getTurns()) {
+            lastTurn = Engine.getTurns();
+            applyAllEffects();
+        }
     }
 
     protected int getLastTurn() {
@@ -117,10 +120,41 @@ public abstract class Entity extends GameElement implements Movable, Attackable,
         }
     }
 
+    private void applyAllEffects() {
+        ArrayList<StatusEffect> decayedEffects = new ArrayList<>();
+        effects.forEach(o -> {
+            if (o.getRemainingTurns() > 0) {
+                o.applyEffect(this);
+            }
+            else {
+                decayedEffects.add(o);
+            }
+        });
+        effects.removeAll(decayedEffects);
+    }
+
+    public void addEffect(StatusEffect s) {
+        for (StatusEffect e : effects) {
+            if (e.getClass().equals(s.getClass())) { // Faz com que não haja efeitos duplicados
+                return;
+            }
+        }
+        effects.add(s);
+    }
+
+    public void endEffect(int i) {
+        effects.remove(i);
+    }
+
+    public ArrayList<StatusEffect> getEffects() {
+        return new ArrayList<>(effects);
+    }
+
     public void checkDeath(Entity e) {
         if (e.getHp() <= 0) {
             ImageMatrixGUI.getInstance().removeImage(e);
             Engine.getInstance().getRoom().remove(e);
+            onDeath();
         }
     }
 }

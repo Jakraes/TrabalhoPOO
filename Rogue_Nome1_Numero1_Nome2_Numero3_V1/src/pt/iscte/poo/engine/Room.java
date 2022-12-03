@@ -1,9 +1,6 @@
 package pt.iscte.poo.engine;
 
-import pt.iscte.poo.entity.Bat;
-import pt.iscte.poo.entity.Hero;
-import pt.iscte.poo.entity.Skeleton;
-import pt.iscte.poo.entity.Thug;
+import pt.iscte.poo.entity.*;
 import pt.iscte.poo.gui.ImageMatrixGUI;
 import pt.iscte.poo.item.Armor;
 import pt.iscte.poo.item.HealingPotion;
@@ -63,6 +60,7 @@ public class Room {
                     case "Skeleton" -> add(new Skeleton(new Point2D(lineReader.nextInt(), lineReader.nextInt())));
                     case "Bat" -> add(new Bat(new Point2D(lineReader.nextInt(), lineReader.nextInt())));
                     case "Thug" -> add(new Thug(new Point2D(lineReader.nextInt(), lineReader.nextInt())));
+                    case "Scorpio" -> add(new Scorpio(new Point2D(lineReader.nextInt(), lineReader.nextInt())));
 
                     case "Sword" -> add(new Sword(new Point2D(lineReader.nextInt(), lineReader.nextInt())));
                     case "Armor" -> add(new Armor(new Point2D(lineReader.nextInt(), lineReader.nextInt())));
