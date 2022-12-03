@@ -116,18 +116,6 @@ public class Hero extends Entity {
         return new ArrayList<>(inventory);
     }
 
-    private void selectSlot(int i) {
-        selectedSlot = i;
-        for (int j = 0; j < 4; j++) {
-            if (j == i) {
-                slots.get(j).select();
-            }
-            else {
-                slots.get(j).unselect();
-            }
-        }
-    }
-
     public void drawHp() {
         double bars = getHp() * 6 / (float) getMaxHp();
 
@@ -156,6 +144,18 @@ public class Hero extends Entity {
             Item item = getItem(i);
             if (item != null) {
                 slots.get(i).addItem(item);
+            }
+        }
+    }
+
+    private void selectSlot(int i) {
+        selectedSlot = i;
+        for (int j = 0; j < 4; j++) {
+            if (j == i) {
+                slots.get(j).select();
+            }
+            else {
+                slots.get(j).unselect();
             }
         }
     }
