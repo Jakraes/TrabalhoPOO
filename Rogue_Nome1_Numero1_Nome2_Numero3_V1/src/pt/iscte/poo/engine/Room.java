@@ -61,6 +61,7 @@ public class Room {
                     case "Bat" -> add(new Bat(new Point2D(lineReader.nextInt(), lineReader.nextInt())));
                     case "Thug" -> add(new Thug(new Point2D(lineReader.nextInt(), lineReader.nextInt())));
                     case "Scorpio" -> add(new Scorpio(new Point2D(lineReader.nextInt(), lineReader.nextInt())));
+                    case "Thief" -> add(new Thief(new Point2D(lineReader.nextInt(), lineReader.nextInt())));
 
                     case "Sword" -> add(new Sword(new Point2D(lineReader.nextInt(), lineReader.nextInt())));
                     case "Armor" -> add(new Armor(new Point2D(lineReader.nextInt(), lineReader.nextInt())));

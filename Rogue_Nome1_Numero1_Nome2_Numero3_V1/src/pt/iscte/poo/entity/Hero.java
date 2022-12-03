@@ -99,20 +99,20 @@ public class Hero extends Entity {
         updateTurn();
     }
 
-    private Item getItem(int index) {
+    protected Item getItem(int index) {
         if (index < inventory.size()) {
             return inventory.get(index);
         }
         return null;
     }
 
-    private void addItem(Item item) {
+    protected void addItem(Item item) {
         if (inventory.size() < 4) {
             inventory.add(item);
         }
     }
 
-    private void removeItem(Item item) {
+    protected void removeItem(Item item) {
         if (inventory.size() > 0) {
             inventory.remove(item);
         }
