@@ -19,19 +19,23 @@ public class Hero extends Entity {
     private static Hero INSTANCE = null;
     private ArrayList<Item> inventory;
     private int selectedSlot = 0;
+
     private ArrayList<HealthBar> health;
+    private ArrayList<InventorySlot> slots;
 
     private Hero(Point2D position) {
         super("Hero", position, 10, 10, 0);
         inventory = new ArrayList<>();
         health = new ArrayList<>();
+        slots = new ArrayList<>();
 
         for (int i = 0; i < 6; i++) {
             health.add(new HealthBar(new Point2D(i, Engine.GRID_HEIGHT - 1)));
             ImageMatrixGUI.getInstance().addImage(health.get(i));
         }
-        for (int i = 6; i < Engine.GRID_WIDTH; i++) {
-
+        for (int i = 0; i < 4; i++) {
+            slots.add(new InventorySlot(new Point2D(i + 6, Engine.GRID_HEIGHT - 1)));
+            ImageMatrixGUI.getInstance().addImage(slots.get(i));
         }
     }
 
@@ -114,13 +118,12 @@ public class Hero extends Entity {
 
     private void selectSlot(int i) {
         selectedSlot = i;
-        ArrayList<Object> temp = Engine.getInstance().getRoom().get(o -> o instanceof InventorySlot);
-        for (Object o : temp) {
-            if (temp.indexOf(o) == i) {
-                ((InventorySlot) o).select();
+        for (int j = 0; j < 4; j++) {
+            if (j == i) {
+                slots.get(j).select();
             }
             else {
-                ((InventorySlot) o).unselect();
+                slots.get(j).unselect();
             }
         }
     }
@@ -129,9 +132,7 @@ public class Hero extends Entity {
         double bars = getHp() * 6 / (float) getMaxHp();
 
         double result = Utils.halfRound(bars);
-        System.out.println(result);
         for (int i = 0; i < health.size(); i++) {
-            System.out.println("i: " + i);
             HealthBar currentBar = health.get(i);
             if (i <= result - 1) {
                 currentBar.setCurrentMode(0);
@@ -143,6 +144,18 @@ public class Hero extends Entity {
                 else {
                     currentBar.setCurrentMode(1);
                 }
+            }
+        }
+    }
+
+    public void drawInventory() {
+        for (int i = 0; i < 4; i++) {
+            slots.get(i).removeItem();
+        }
+        for (int i = 0; i < inventory.size(); i++) {
+            Item item = getItem(i);
+            if (item != null) {
+                slots.get(i).addItem(item);
             }
         }
     }

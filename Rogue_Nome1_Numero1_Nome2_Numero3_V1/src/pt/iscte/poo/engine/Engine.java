@@ -48,10 +48,6 @@ public class Engine implements Observer {
 
         for (int i = 0; i < 4; i++) {
             rooms.add(new Room(i));
-
-            for (int j = 0; j < 4; j++) {
-                rooms.get(i).add(new InventorySlot(new Point2D(j + 6, GRID_HEIGHT - 1)));
-            }
         }
 
         getRoom().renderRoom();
@@ -78,17 +74,6 @@ public class Engine implements Observer {
         getRoom().renderRoom();
     }
 
-    private void drawHeroInventory() {
-        ArrayList<Object> temp = getRoom().get(o -> o instanceof InventorySlot);
-        for (int i = 0; i < temp.size(); i++) {
-            Item item = Hero.getInstance().getItem(i);
-            ((InventorySlot) temp.get(i)).removeItem();
-            if (item != null) {
-                ((InventorySlot) temp.get(i)).addItem(item);
-            }
-        }
-    }
-
     @Override
     public void update(Observed source) {
         ArrayList<Object> temp = getRoom().get(o -> o instanceof Entity && !(o instanceof Hero));
@@ -99,7 +84,7 @@ public class Engine implements Observer {
         }
 
         Hero.getInstance().drawHp();
-        drawHeroInventory();
+        Hero.getInstance().drawInventory();
         /* ------ DEBUG ------ //
         for (Object o : getRoom().get(o -> o instanceof Entity)) {
             System.out.println(((Entity) o).getName() + " - HP: " + ((Entity) o).getHp() + " - ATK: " + ((Entity) o).getAtk());
