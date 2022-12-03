@@ -13,5 +13,5 @@ public interface Attackable {
     void setDef(int def);
     void attack(Entity e);
     void onDeath();
-    //void applyAllEffects();
+    void applyAllEffects();
 }

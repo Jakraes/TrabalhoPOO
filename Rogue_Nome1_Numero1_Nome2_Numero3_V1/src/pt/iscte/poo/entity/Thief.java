@@ -15,7 +15,9 @@ public class Thief extends Entity {
 
     @Override
     public void onDeath() {
-        stolenItem.drop(getPosition());
+        if (stolenItem != null) {
+            stolenItem.drop(getPosition());
+        }
     }
 
     @Override

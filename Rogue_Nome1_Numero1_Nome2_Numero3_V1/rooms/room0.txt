@@ -9,6 +9,7 @@
 #        #
 #### #####
 
+Treasure,1,1
 Hero,3,3
 Skeleton,1,6
 Bat,3,7

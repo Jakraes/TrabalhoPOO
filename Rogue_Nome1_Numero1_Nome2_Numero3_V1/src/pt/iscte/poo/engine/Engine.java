@@ -41,6 +41,8 @@ public class Engine implements Observer {
     public void start() {
         gui.clearImages();
 
+        Hero.resetHero();
+
         rooms = new ArrayList<>();
 
         turns = 0;

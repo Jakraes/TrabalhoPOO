@@ -46,16 +46,21 @@ public class Hero extends Entity {
         return INSTANCE;
     }
 
+    public static void resetHero() {
+        INSTANCE = null;
+        getInstance();
+    }
+
     @Override
     public void attack(Entity e) {
         if (Math.random() > e.getDef() / 100.0) {
             e.setHp(e.getHp() - getAtk());
         }
+        checkDeath(e);
     }
 
     @Override
     public void move() {
-        System.out.println(getHp());
         int key = ImageMatrixGUI.getInstance().keyPressed();
 
         Point2D nextPosition = null;

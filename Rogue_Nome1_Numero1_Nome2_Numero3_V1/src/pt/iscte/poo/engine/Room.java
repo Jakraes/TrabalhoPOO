@@ -8,6 +8,7 @@ import pt.iscte.poo.item.Key;
 import pt.iscte.poo.item.Sword;
 import pt.iscte.poo.tile.Door;
 import pt.iscte.poo.tile.Floor;
+import pt.iscte.poo.tile.Treasure;
 import pt.iscte.poo.tile.Wall;
 import pt.iscte.poo.utils.Point2D;
 
@@ -80,6 +81,17 @@ public class Room {
                             temp = new Door(position, toRoom, toPosition, -1);
                         }
                         add(temp);
+                    }
+                    case "Treasure" -> {
+                        Point2D position = new Point2D(lineReader.nextInt(), lineReader.nextInt());
+                        ArrayList<Object> temp = get(o -> o instanceof Floor);
+                        for (Object o : temp) {
+                            if (((Floor) o).getPosition().equals(position)) {
+                                remove((Floor) o);
+                                break;
+                            }
+                        }
+                        add(new Treasure(position));
                     }
                 }
                 lineReader.close();

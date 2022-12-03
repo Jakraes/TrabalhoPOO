@@ -120,7 +120,7 @@ public abstract class Entity extends GameElement implements Movable, Attackable,
         }
     }
 
-    private void applyAllEffects() {
+    public void applyAllEffects() {
         ArrayList<StatusEffect> decayedEffects = new ArrayList<>();
         effects.forEach(o -> {
             if (o.getRemainingTurns() > 0) {
@@ -152,9 +152,9 @@ public abstract class Entity extends GameElement implements Movable, Attackable,
 
     public void checkDeath(Entity e) {
         if (e.getHp() <= 0) {
+            e.onDeath();
             ImageMatrixGUI.getInstance().removeImage(e);
             Engine.getInstance().getRoom().remove(e);
-            onDeath();
         }
     }
 }
