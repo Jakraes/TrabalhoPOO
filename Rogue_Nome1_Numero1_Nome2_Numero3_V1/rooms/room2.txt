@@ -1,21 +1,18 @@
 ##########
 #        #
-#   ##   #
-#   #    #
-    #    #
-##### ####
+  ##  ## #
+# #    # #
+# #    # #
+# #    #  
+# #    # #
+# ##  ## #
 #        #
-#        #
-#        #
-##########
+#### #####
 
-Bat,1,1
-Bat,2,1
-Skeleton,7,3
-Skeleton,8,2
-HealingPotion,8,4
-Scorpio,5,7
-Treasure,5,8
-Thug,3,7
-Thug,7,7
-Door,0,4,0,9,4,2
+Skeleton,3,3
+Skeleton,6,3
+Skeleton,3,6
+Skeleton,6,6
+Door,9,5,1,0,5,0
+Door,0,2,5,9,2,1
+Door,4,9,3,4,0

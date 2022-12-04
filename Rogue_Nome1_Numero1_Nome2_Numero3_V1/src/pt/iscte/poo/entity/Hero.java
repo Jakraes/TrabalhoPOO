@@ -2,7 +2,6 @@ package pt.iscte.poo.entity;
 
 import pt.iscte.poo.engine.Engine;
 import pt.iscte.poo.gui.ImageMatrixGUI;
-import pt.iscte.poo.gui.ImageTile;
 import pt.iscte.poo.interfaces.Usable;
 import pt.iscte.poo.item.Item;
 import pt.iscte.poo.ui.HealthBar;
@@ -19,12 +18,13 @@ public class Hero extends Entity {
     private static Hero INSTANCE = null;
     private ArrayList<Item> inventory;
     private int selectedSlot = 0;
+    private String heroName;
 
     private ArrayList<HealthBar> health;
     private ArrayList<InventorySlot> slots;
 
     private Hero(Point2D position) {
-        super("Hero", position, 10, 10, 0);
+        super("Hero", position, 10, 1, 0);
         inventory = new ArrayList<>();
         health = new ArrayList<>();
         slots = new ArrayList<>();
@@ -55,6 +55,7 @@ public class Hero extends Entity {
     public void attack(Entity e) {
         if (Math.random() > e.getDef() / 100.0) {
             e.setHp(e.getHp() - getAtk());
+            System.out.println("Dealt " + getAtk() + " to " + e.getName());
         }
         checkDeath(e);
     }
@@ -92,6 +93,8 @@ public class Hero extends Entity {
                     removeItem(getItem(selectedSlot));
                 }
             }
+
+            case VK_R -> Engine.getInstance().start();
 
             case VK_1 -> selectSlot(0);
             case VK_2 -> selectSlot(1);
@@ -145,6 +148,14 @@ public class Hero extends Entity {
                 }
             }
         }
+    }
+
+    public String getHeroName() {
+        return heroName;
+    }
+
+    public void setHeroName(String heroName) {
+        this.heroName = heroName;
     }
 
     public void drawInventory() {

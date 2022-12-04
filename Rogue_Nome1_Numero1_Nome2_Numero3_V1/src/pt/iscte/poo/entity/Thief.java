@@ -16,7 +16,7 @@ public class Thief extends Entity {
     @Override
     public void onDeath() {
         if (stolenItem != null) {
-            stolenItem.drop(getPosition());
+            stolenItem.add(getPosition());
         }
     }
 
@@ -26,6 +26,8 @@ public class Thief extends Entity {
             if (stolenItem == null) {
                 int index = (int)(Math.random() * Hero.getInstance().getInventory().size());
                 stolenItem = Hero.getInstance().getItem(index);
+                stolenItem.drop(getPosition());
+                stolenItem.remove();
                 Hero.getInstance().removeItem(stolenItem);
             }
         }

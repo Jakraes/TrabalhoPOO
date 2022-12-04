@@ -1,20 +1,18 @@
 #### #####
+#    #   #
+#    #   #
+#    #   #
+#    ### #
+         #
 #        #
-#         
 #        #
-#    #####
-#        #
-#        #
-#         
 #        #
 ##########
 
-HealingPotion,1,8
-Skeleton,7,2
-Skeleton,2,3
-Skeleton,4,7
-Skeleton,8,5
-Thief,2,3
-Door,9,2,3,0,2,1
-Door,9,7,3,0,7
-Door,4,0,0,4,9,0
+Skeleton,6,1
+Bat,2,7
+Bat,6,7
+Sword,6,3
+Key,8,1,0
+Door,4,0,0,4,9
+Door,0,5,2,9,5,0

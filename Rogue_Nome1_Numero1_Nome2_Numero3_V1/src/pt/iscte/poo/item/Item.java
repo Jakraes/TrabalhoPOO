@@ -11,12 +11,12 @@ public abstract class Item extends GameElement implements Pickable {
         super(name, position, 2);
     }
 
-    protected void remove() {
+    public void remove() {
         ImageMatrixGUI.getInstance().removeImage(this);
         Engine.getInstance().getRoom().remove(this);
     }
 
-    protected void add(Point2D position) {
+    public void add(Point2D position) {
         setPosition(position);
         ImageMatrixGUI.getInstance().addImage(this);
         Engine.getInstance().getRoom().add(this);

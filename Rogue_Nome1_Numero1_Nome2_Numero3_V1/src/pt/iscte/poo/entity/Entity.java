@@ -15,6 +15,7 @@ import java.util.ArrayList;
 public abstract class Entity extends GameElement implements Movable, Attackable, Walkable {
     private int maxHp;
     private int hp;
+    private int baseAtk;
     private int atk;
     private int def;
     private int lastTurn = Engine.getTurns();
@@ -24,7 +25,8 @@ public abstract class Entity extends GameElement implements Movable, Attackable,
         super(name, position, 3);
         this.maxHp = maxHp;
         this.hp = maxHp;
-        this.atk = atk;
+        this.baseAtk = atk;
+        this.atk = baseAtk;
         this.def = def;
         effects = new ArrayList<>();
     }
@@ -47,6 +49,16 @@ public abstract class Entity extends GameElement implements Movable, Attackable,
     @Override
     public void setHp(int hp) {
         this.hp = Math.min(hp, maxHp);
+    }
+
+    @Override
+    public int getBaseAtk() {
+        return baseAtk;
+    }
+
+    @Override
+    public void setBaseAtk(int baseAtk) {
+        this.baseAtk = baseAtk;
     }
 
     @Override

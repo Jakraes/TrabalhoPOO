@@ -7,6 +7,8 @@ public interface Attackable {
     void setMaxHp(int maxHp);
     int getHp();
     void setHp(int hp);
+    int getBaseAtk();
+    void setBaseAtk(int baseAtk);
     int getAtk();
     void setAtk(int atk);
     int getDef();

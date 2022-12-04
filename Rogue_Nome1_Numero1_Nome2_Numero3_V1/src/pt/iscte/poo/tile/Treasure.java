@@ -11,7 +11,7 @@ public class Treasure extends Tile {
 
     @Override
     public boolean isWalkable() {
-        String temp = ImageMatrixGUI.getInstance().askUser("Chegou ao tesouro! Deseja recomeçar?\n" +
+        String temp = ImageMatrixGUI.getInstance().askUser("Chegaste ao tesouro! Queres recomeçar?\n" +
                                                                    "                    Y                    N");
         if (temp != null) {
             if (temp.equals("Y") || temp.equals("y")) {

@@ -2,10 +2,7 @@ package pt.iscte.poo.engine;
 
 import pt.iscte.poo.entity.*;
 import pt.iscte.poo.gui.ImageMatrixGUI;
-import pt.iscte.poo.item.Armor;
-import pt.iscte.poo.item.HealingPotion;
-import pt.iscte.poo.item.Key;
-import pt.iscte.poo.item.Sword;
+import pt.iscte.poo.item.*;
 import pt.iscte.poo.tile.Door;
 import pt.iscte.poo.tile.Floor;
 import pt.iscte.poo.tile.Treasure;
@@ -63,8 +60,10 @@ public class Room {
                     case "Thug" -> add(new Thug(new Point2D(lineReader.nextInt(), lineReader.nextInt())));
                     case "Scorpio" -> add(new Scorpio(new Point2D(lineReader.nextInt(), lineReader.nextInt())));
                     case "Thief" -> add(new Thief(new Point2D(lineReader.nextInt(), lineReader.nextInt())));
+                    case "Boss" -> add(new Boss(new Point2D(lineReader.nextInt(), lineReader.nextInt()), lineReader.nextInt()));
 
                     case "Sword" -> add(new Sword(new Point2D(lineReader.nextInt(), lineReader.nextInt())));
+                    case "Hammer" -> add(new Hammer(new Point2D(lineReader.nextInt(), lineReader.nextInt())));
                     case "Armor" -> add(new Armor(new Point2D(lineReader.nextInt(), lineReader.nextInt())));
                     case "Key" -> add(new Key(new Point2D(lineReader.nextInt(), lineReader.nextInt()), lineReader.nextInt()));
                     case "HealingPotion" -> add(new HealingPotion(new Point2D(lineReader.nextInt(), lineReader.nextInt())));

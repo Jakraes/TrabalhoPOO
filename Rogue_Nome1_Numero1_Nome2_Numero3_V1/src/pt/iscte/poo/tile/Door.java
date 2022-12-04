@@ -29,6 +29,7 @@ public class Door extends Tile {
 
     @Override
     public boolean isWalkable() {
+        System.out.println(keyNumber);
         if (open) {
             Engine.getInstance().changeRoom(toRoom);
             Hero.getInstance().setPosition(toPosition);
@@ -40,11 +41,16 @@ public class Door extends Tile {
             }
         }
         else {
-            for (Item i : Hero.getInstance().getInventory()) {
-                if (i instanceof Key) {
-                    if (((Key) i).getKeyNumber() == keyNumber || keyNumber == -1) {
-                        open = true;
-                        break;
+            if (keyNumber == -1) {
+                open = true;
+            }
+            else {
+                for (Item i : Hero.getInstance().getInventory()) {
+                    if (i instanceof Key) {
+                        if (((Key) i).getKeyNumber() == keyNumber) {
+                            open = true;
+                            break;
+                        }
                     }
                 }
             }

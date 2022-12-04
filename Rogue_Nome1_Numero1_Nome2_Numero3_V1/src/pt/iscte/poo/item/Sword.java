@@ -11,12 +11,12 @@ public class Sword extends Item {
     @Override
     public void grab() {
         remove();
-        Hero.getInstance().setAtk(Hero.getInstance().getAtk() * 2);
+        Hero.getInstance().setAtk(Hero.getInstance().getAtk() + Hero.getInstance().getBaseAtk());
     }
 
     @Override
     public void drop(Point2D position) {
         add(position);
-        Hero.getInstance().setAtk(Hero.getInstance().getAtk() / 2);
+        Hero.getInstance().setAtk(Hero.getInstance().getAtk() - Hero.getInstance().getBaseAtk());
     }
 }
