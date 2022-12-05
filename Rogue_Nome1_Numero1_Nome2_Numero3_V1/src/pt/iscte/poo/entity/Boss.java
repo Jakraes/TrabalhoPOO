@@ -7,6 +7,7 @@ import pt.iscte.poo.utils.Vector2D;
 
 public class Boss extends Entity {
     private Key key;
+
     public Boss(Point2D position, int keyNumber) {
         super("Boss", position, 20, 3, 30);
         key = new Key(getPosition(), keyNumber);

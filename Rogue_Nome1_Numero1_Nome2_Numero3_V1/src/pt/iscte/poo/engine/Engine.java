@@ -16,10 +16,9 @@ public class Engine implements Observer {
     public static final int GRID_HEIGHT = 11;
 
     public static Engine INSTANCE = null;
-    private ImageMatrixGUI gui = ImageMatrixGUI.getInstance();
-
     private static int turns;
     private static int currentRoom;
+    private ImageMatrixGUI gui = ImageMatrixGUI.getInstance();
     private ArrayList<Room> rooms;
 
     private Engine() {
@@ -35,6 +34,14 @@ public class Engine implements Observer {
         return INSTANCE;
     }
 
+    public static int getTurns() {
+        return turns;
+    }
+
+    public static void addTurn() {
+        turns++;
+    }
+
     public void start() {
         gui.clearImages();
 
@@ -46,7 +53,11 @@ public class Engine implements Observer {
 
         Hero.resetHero();
 
-        Hero.getInstance().setHeroName(gui.askUser("Qual é o teu nome?"));
+        String temp = null;
+        while (temp == null) {
+            temp = gui.askUser("Qual é o teu nome?");
+        }
+        Hero.getInstance().setHeroName(temp);
 
         rooms = new ArrayList<>();
 
@@ -58,16 +69,8 @@ public class Engine implements Observer {
         }
 
         getRoom().renderRoom();
-        gui.setMessage(Hero.getInstance().getHeroName() + " - Turno: " + turns);
+        gui.setStatusMessage(Hero.getInstance().getHeroName() + " - Turno: " + turns);
         gui.update();
-    }
-
-    public static int getTurns() {
-        return turns;
-    }
-
-    public static void addTurn() {
-        turns++;
     }
 
     public Room getRoom() {
@@ -90,30 +93,20 @@ public class Engine implements Observer {
         for (Object o : temp) {
             if (((Entity) o).getHp() > 0) {
                 ((Entity) o).move();
-            }
-            else {
+            } else {
                 ((Entity) o).onDeath();
             }
         }
 
         Hero.getInstance().drawHp();
         Hero.getInstance().drawInventory();
-        System.out.println(Hero.getInstance().getAtk());
-        /* ------ DEBUG ------ //
-        for (Object o : getRoom().get(o -> o instanceof Entity)) {
-            System.out.println(((Entity) o).getName() + " - HP: " + ((Entity) o).getHp() + " - ATK: " + ((Entity) o).getAtk());
-        }
-        System.out.println("--------------");
-        // ------ DEBUG ------ */
+
         if (Hero.getInstance().getHp() > 0) {
-            gui.setMessage(Hero.getInstance().getHeroName() + " - Turno: " + turns);
+            gui.setStatusMessage(Hero.getInstance().getHeroName() + " - Turno: " + turns);
             gui.update();
-        }
-        else {
-            String question = gui.askUser("Morreste! Queres recomeçar?\n         Y        N");
-            if (question.equals("Y") || question.equals("y")) {
-                start();
-            }
+        } else {
+            gui.setMessage("Morreste!");
+            start();
         }
     }
 }

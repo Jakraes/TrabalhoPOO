@@ -19,6 +19,7 @@ public class Hero extends Entity {
     private ArrayList<Item> inventory;
     private int selectedSlot = 0;
     private String heroName;
+    private int kills;
 
     private ArrayList<HealthBar> health;
     private ArrayList<InventorySlot> slots;
@@ -49,6 +50,18 @@ public class Hero extends Entity {
     public static void resetHero() {
         INSTANCE = null;
         getInstance();
+    }
+
+    public String getHeroName() {
+        return heroName;
+    }
+
+    public void setHeroName(String heroName) {
+        this.heroName = heroName;
+    }
+
+    public int getKills() {
+        return kills;
     }
 
     @Override
@@ -94,7 +107,7 @@ public class Hero extends Entity {
                 }
             }
 
-            case VK_R -> Engine.getInstance().start();
+            case VK_K -> setHp(10);
 
             case VK_1 -> selectSlot(0);
             case VK_2 -> selectSlot(1);
@@ -138,24 +151,14 @@ public class Hero extends Entity {
             HealthBar currentBar = health.get(i);
             if (i <= result - 1) {
                 currentBar.setCurrentMode(0);
-            }
-            else {
+            } else {
                 if (result % 1 == 0.5 && i == (int) result) {
                     currentBar.setCurrentMode(2);
-                }
-                else {
+                } else {
                     currentBar.setCurrentMode(1);
                 }
             }
         }
-    }
-
-    public String getHeroName() {
-        return heroName;
-    }
-
-    public void setHeroName(String heroName) {
-        this.heroName = heroName;
     }
 
     public void drawInventory() {
@@ -170,13 +173,22 @@ public class Hero extends Entity {
         }
     }
 
+    @Override
+    public void checkDeath(Entity e) {
+        if (e.getHp() <= 0) {
+            e.onDeath();
+            ImageMatrixGUI.getInstance().removeImage(e);
+            Engine.getInstance().getRoom().remove(e);
+            kills++;
+        }
+    }
+
     private void selectSlot(int i) {
         selectedSlot = i;
         for (int j = 0; j < 4; j++) {
             if (j == i) {
                 slots.get(j).select();
-            }
-            else {
+            } else {
                 slots.get(j).unselect();
             }
         }

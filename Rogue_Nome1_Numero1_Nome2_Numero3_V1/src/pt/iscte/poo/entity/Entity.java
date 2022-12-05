@@ -137,8 +137,7 @@ public abstract class Entity extends GameElement implements Movable, Attackable,
         effects.forEach(o -> {
             if (o.getRemainingTurns() > 0) {
                 o.applyEffect(this);
-            }
-            else {
+            } else {
                 decayedEffects.add(o);
             }
         });

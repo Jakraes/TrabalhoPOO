@@ -38,7 +38,9 @@ public class Room {
 
                 for (int x = 0; x < line.length(); x++) {
                     switch (line.charAt(x)) {
-                        case ' ' -> {if (!(x == 0 || x == 9 || y == 0 || y == 9)) elements.add(new Floor(new Point2D(x, y)));}
+                        case ' ' -> {
+                            if (!(x == 0 || x == 9 || y == 0 || y == 9)) elements.add(new Floor(new Point2D(x, y)));
+                        }
                         case '#' -> elements.add(new Wall(new Point2D(x, y)));
                     }
                 }
@@ -50,7 +52,7 @@ public class Room {
                 Scanner lineReader = new Scanner(line);
                 lineReader.useDelimiter(",");
 
-                switch (lineReader.next())  {
+                switch (lineReader.next()) {
                     case "Hero" -> {
                         Hero.getInstance().setPosition(new Point2D(lineReader.nextInt(), lineReader.nextInt()));
                         add(Hero.getInstance());
@@ -75,8 +77,7 @@ public class Room {
                         Point2D toPosition = new Point2D(lineReader.nextInt(), lineReader.nextInt());
                         try {
                             temp = new Door(position, toRoom, toPosition, lineReader.nextInt());
-                        }
-                        catch (NoSuchElementException e) {
+                        } catch (NoSuchElementException e) {
                             temp = new Door(position, toRoom, toPosition, -1);
                         }
                         add(temp);
@@ -96,8 +97,7 @@ public class Room {
                 lineReader.close();
             }
             scanner.close();
-        }
-        catch (FileNotFoundException e) {
+        } catch (FileNotFoundException e) {
             System.err.println(e.getMessage());
         }
     }
@@ -127,7 +127,4 @@ public class Room {
         elements.remove(e);
     }
 
-    public void removeAll(ArrayList<GameElement> e) {
-        elements.removeAll(e);
-    }
 }

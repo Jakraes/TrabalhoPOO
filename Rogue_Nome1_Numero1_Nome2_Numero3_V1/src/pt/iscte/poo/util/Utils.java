@@ -11,8 +11,7 @@ public class Utils {
             double dist1 = Math.abs(i - middle);
             double dist2 = Math.abs(max - i);
             result = (dist1 > dist2) ? max : middle;
-        }
-        else {
+        } else {
             double dist1 = Math.abs(middle - i);
             double dist2 = Math.abs(i - min);
             result = (dist1 > dist2) ? min : middle;

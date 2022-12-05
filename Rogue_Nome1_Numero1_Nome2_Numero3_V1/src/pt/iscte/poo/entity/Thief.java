@@ -24,7 +24,7 @@ public class Thief extends Entity {
     public void attack(Entity e) {
         if (e instanceof Hero && Math.random() > e.getDef() / 100.0) {
             if (stolenItem == null) {
-                int index = (int)(Math.random() * Hero.getInstance().getInventory().size());
+                int index = (int) (Math.random() * Hero.getInstance().getInventory().size());
                 stolenItem = Hero.getInstance().getItem(index);
                 stolenItem.drop(getPosition());
                 stolenItem.remove();
@@ -39,8 +39,7 @@ public class Thief extends Entity {
             Point2D nextPosition;
             if (stolenItem == null) {
                 nextPosition = getPosition().plus(Vector2D.movementVector(getPosition(), Hero.getInstance().getPosition()));
-            }
-            else {
+            } else {
                 nextPosition = getPosition().plus(Direction.forVector(Vector2D.movementVector(getPosition(), Hero.getInstance().getPosition())).opposite().asVector());
             }
             checkForCollision(nextPosition);

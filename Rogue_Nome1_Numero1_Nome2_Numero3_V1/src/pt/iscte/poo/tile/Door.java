@@ -39,12 +39,10 @@ public class Door extends Tile {
                     break;
                 }
             }
-        }
-        else {
+        } else {
             if (keyNumber == -1) {
                 open = true;
-            }
-            else {
+            } else {
                 for (Item i : Hero.getInstance().getInventory()) {
                     if (i instanceof Key) {
                         if (((Key) i).getKeyNumber() == keyNumber) {
