@@ -1,0 +1,215 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="bf655c8d-086e-411c-890d-d025776a323a" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.classpath" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.project" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.settings/org.eclipse.core.resources.prefs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.settings/org.eclipse.jdt.core.prefs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Highscore.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Instructions.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Rogue_Nome1_Numero1_Nome2_Numero3_V1.iml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/pt/iscte/poo/effects/PoisonEffect.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/pt/iscte/poo/effects/StatusEffect.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/pt/iscte/poo/engine/App.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/pt/iscte/poo/engine/Engine.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/pt/iscte/poo/engine/GameElement.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/pt/iscte/poo/engine/Room.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/pt/iscte/poo/entity/Bat.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/pt/iscte/poo/entity/Boss.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/pt/iscte/poo/entity/Entity.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/pt/iscte/poo/entity/Hero.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/pt/iscte/poo/entity/Scorpio.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/pt/iscte/poo/entity/Skeleton.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/pt/iscte/poo/entity/Thief.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/pt/iscte/poo/entity/Thug.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/pt/iscte/poo/example/EngineExample.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/pt/iscte/poo/example/Floor.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/pt/iscte/poo/example/Hero.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/pt/iscte/poo/example/MainExample.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/pt/iscte/poo/interfaces/Attackable.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/pt/iscte/poo/interfaces/Movable.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/pt/iscte/poo/interfaces/Pickable.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/pt/iscte/poo/interfaces/Usable.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/pt/iscte/poo/interfaces/Walkable.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/pt/iscte/poo/item/Armor.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/pt/iscte/poo/item/Hammer.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/pt/iscte/poo/item/HealingPotion.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/pt/iscte/poo/item/Item.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/pt/iscte/poo/item/Key.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/pt/iscte/poo/item/Sword.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/pt/iscte/poo/tile/Door.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/pt/iscte/poo/tile/Floor.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/pt/iscte/poo/tile/Tile.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/pt/iscte/poo/tile/Treasure.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/pt/iscte/poo/tile/Wall.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/pt/iscte/poo/ui/Black.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/pt/iscte/poo/ui/HealthBar.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/pt/iscte/poo/ui/InventorySlot.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/pt/iscte/poo/util/Highscore.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/pt/iscte/poo/util/Utils.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/icon/Game_Icon.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/Ankh.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/Armor.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/Bat.gif" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/Black.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/Boss.gif" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/DoorClosed.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/DoorOpen.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/Floor.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/Grass.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/Green.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/GreenRed.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/Hammer.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/HealingPotion.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/Hero.gif" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/Inventory1.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/Inventory2.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/Key.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/MightPotion.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/Red.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/Scorpio.gif" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/Skeleton.gif" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/Sword.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/Thief.gif" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/Thug.gif" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/Treasure.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/Wall.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/rooms/room0.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/rooms/room1.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/rooms/room2.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/rooms/room3.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/rooms/room4.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/rooms/room5.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/rooms/room6.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/rooms/room7.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pt/iscte/poo/effects/PoisonEffect.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pt/iscte/poo/effects/StatusEffect.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pt/iscte/poo/engine/App.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pt/iscte/poo/engine/Engine.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pt/iscte/poo/engine/GameElement.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pt/iscte/poo/engine/Room.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pt/iscte/poo/entity/Bat.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pt/iscte/poo/entity/Boss.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pt/iscte/poo/entity/Entity.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pt/iscte/poo/entity/Hero.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pt/iscte/poo/entity/Scorpio.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pt/iscte/poo/entity/Skeleton.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pt/iscte/poo/entity/Thief.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pt/iscte/poo/entity/Thug.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pt/iscte/poo/interfaces/Attackable.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pt/iscte/poo/interfaces/Movable.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pt/iscte/poo/interfaces/Pickable.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pt/iscte/poo/interfaces/Usable.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pt/iscte/poo/interfaces/Walkable.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pt/iscte/poo/item/Armor.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pt/iscte/poo/item/Hammer.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pt/iscte/poo/item/HealingPotion.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pt/iscte/poo/item/Item.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pt/iscte/poo/item/Key.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pt/iscte/poo/item/Sword.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pt/iscte/poo/tile/Door.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pt/iscte/poo/tile/Floor.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pt/iscte/poo/tile/Tile.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pt/iscte/poo/tile/Treasure.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pt/iscte/poo/tile/Wall.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pt/iscte/poo/ui/Black.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pt/iscte/poo/ui/HealthBar.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pt/iscte/poo/ui/InventorySlot.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pt/iscte/poo/util/Highscore.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pt/iscte/poo/util/Utils.java" beforeDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Interface" />
+        <option value="Class" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
+  </component>
+  <component name="MarkdownSettingsMigration">
+    <option name="stateVersion" value="1" />
+  </component>
+  <component name="ProjectId" id="2HyvmeI3XlEWDU6j9kPkAVdkSPy" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "ASKED_ADD_EXTERNAL_FILES": "true",
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "ToolWindowRun.ShowToolbar": "false",
+    "last_opened_file_path": "C:/Users/jpcar/OneDrive/Ambiente de Trabalho/Workspace/TouFartoDoTrabalho/Rogue_JoaoCarvalho_103953_EmanuelFernandes_105084_V3"
+  }
+}]]></component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\jpcar\OneDrive\Ambiente de Trabalho\Workspace\TouFartoDoTrabalho\Rogue_Nome1_Numero1_Nome2_Numero3_V1\src\pt\iscte\poo\util" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\jpcar\OneDrive\Ambiente de Trabalho\Workspace\TouFartoDoTrabalho\Rogue_Nome1_Numero1_Nome2_Numero3_V1\rooms" />
+      <recent name="C:\Users\jpcar\OneDrive\Ambiente de Trabalho\Workspace\TouFartoDoTrabalho\Rogue_Nome1_Numero1_Nome2_Numero3_V1" />
+      <recent name="C:\Users\jpcar\OneDrive\Ambiente de Trabalho\Workspace\TouFartoDoTrabalho\Rogue_Nome1_Numero1_Nome2_Numero3_V1\src\pt\iscte\poo\entity" />
+    </key>
+  </component>
+  <component name="RunManager">
+    <configuration name="App" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="pt.iscte.poo.engine.App" />
+      <module name="Rogue_JoaoCarvalho_103953_EmanuelFernandes_105084_V3" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="pt.iscte.poo.engine.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Application.App" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="bf655c8d-086e-411c-890d-d025776a323a" name="Changes" comment="" />
+      <created>1669270306911</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1669270306911</updated>
+    </task>
+    <servers />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+</project>
