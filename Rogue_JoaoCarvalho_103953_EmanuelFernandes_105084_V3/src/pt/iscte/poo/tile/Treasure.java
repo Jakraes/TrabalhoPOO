@@ -14,7 +14,15 @@ public class Treasure extends Tile {
     public boolean isWalkable() {
         ImageMatrixGUI.getInstance().setMessage("Chegaste ao tesouro em " + Engine.getTurns() + " turnos!");
         Utils.writeHighscore();
-        Engine.getInstance().start();
+        String temp = ImageMatrixGUI.getInstance().askUser("Queres recomeçar? \n Y N");
+        if (temp.equals("y") || temp.equals("Y")) {
+            Engine.getInstance().start();
+        }
+        else {
+            ImageMatrixGUI.getInstance().dispose();
+            System.exit(0);
+            //Engine.stopRunning();
+        }
 
         return false;
     }

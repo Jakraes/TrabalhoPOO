@@ -29,7 +29,6 @@ public class Door extends Tile {
 
     @Override
     public boolean isWalkable() {
-        System.out.println(keyNumber);
         if (open) {
             Engine.getInstance().changeRoom(toRoom);
             Hero.getInstance().setPosition(toPosition);

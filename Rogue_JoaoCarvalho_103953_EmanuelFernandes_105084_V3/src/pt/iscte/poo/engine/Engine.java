@@ -18,6 +18,7 @@ public class Engine implements Observer {
     public static Engine INSTANCE = null;
     private static int turns;
     private static int currentRoom;
+    //private static boolean running;
     private ImageMatrixGUI gui = ImageMatrixGUI.getInstance();
     private ArrayList<Room> rooms;
 
@@ -42,6 +43,10 @@ public class Engine implements Observer {
         turns++;
     }
 
+    /*public static void stopRunning() {
+        running = false;
+    }*/
+
     public void start() {
         gui.setName("Dungeon of the Nimrods");
         gui.clearImages();
@@ -55,7 +60,7 @@ public class Engine implements Observer {
         Hero.resetHero();
 
         String temp = null;
-        while (temp == null) {
+        while (temp == null || temp.equals("")) {
             temp = gui.askUser("Qual é o teu nome?");
         }
         Hero.getInstance().setHeroName(temp);
@@ -64,6 +69,7 @@ public class Engine implements Observer {
 
         turns = 0;
         currentRoom = 0;
+        // running = true;
 
         for (int i = 0; i < 8; i++) {
             rooms.add(new Room(i));
@@ -99,8 +105,10 @@ public class Engine implements Observer {
             }
         }
 
-        Hero.getInstance().drawHp();
-        Hero.getInstance().drawInventory();
+        //if (running) {
+            Hero.getInstance().drawHp();
+            Hero.getInstance().drawInventory();
+        //}
 
         if (Hero.getInstance().getHp() > 0) {
             gui.setStatusMessage(Hero.getInstance().getHeroName() + " - Turno: " + turns);
